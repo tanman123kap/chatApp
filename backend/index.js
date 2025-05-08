@@ -18,7 +18,7 @@ app.use(cors({
 app.use("/api/auth", authRouter);
 app.use("/api/message", messageRouter);
 
-app.get("/", () => {
+app.get("/", (req, res) => {
     res.send("app");
 });
 
