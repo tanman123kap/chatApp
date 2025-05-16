@@ -37,7 +37,7 @@ const sendMessage = async (req, res) => {
         let imageUrl;
         if(image) {
             //Upload base64 to cloudinary
-            const messageImage = await cloudinary.uploader.upload(image);
+            const messageImage = await cloudinary.uploader.upload(image, {folder: "ChatAppMessages"});
             imageUrl = messageImage.secure_url;
         }
         const newMessage = new messageModal({
